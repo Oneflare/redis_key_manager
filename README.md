@@ -1,10 +1,10 @@
 # RedisKeyManager
 
-RedisKeyManager provides a simple, self-documenting Ruby DSL for declaring the Redis key patterns
-used by your application. Instead of repeating the same string literals and manual interpolations throughout your
-application -- with the corresponding risk of error and silent failure -- RedisKeyManager generates
-methods that return those keys, accepting named parameters corresponding to the substitutions specified
-in each pattern.
+RedisKeyManager provides a simple Ruby DSL for declaring the Redis key patterns used by your
+application. Instead of repeating the same string literals and manual interpolations throughout your
+application&mdash;with the corresponding risk of error and silent failure&mdash;RedisKeyManager
+generates methods that return those keys, accepting named parameters corresponding to the
+substitutions specified in each pattern.
 
 ## Installation
 
@@ -22,7 +22,7 @@ $ bundle
 ```ruby
 require "redis_key_manager"
 
-# Declare your key patterns like this
+# Declare your key patterns like this:
 
 class MyRedisKeys
   include RedisKeyManager::Manager
@@ -32,7 +32,7 @@ class MyRedisKeys
   key :foo, "foo:[name]:bar:[boom]:[bam]"
 end
 
-# Use your keys like this
+# Use your keys like this:
 
 key = MyRedisKeys.hits  # => "hits"
 Redis.current.incr(key)
@@ -57,11 +57,14 @@ MyRedisKeys.foo(name: "BOB", boom: 5, bam: nil)
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec rake spec`
-to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to
-experiment.
+After checking out the repo, run `bin/setup` to install dependencies.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
+
+You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+Please ensure that you write tests for any commits, and that tests pass locally before you submit a PR.
+To run tests, run `bundle exec rake spec`.
 
 ## Contributing
 
