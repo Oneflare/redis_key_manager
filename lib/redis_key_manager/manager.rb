@@ -16,7 +16,7 @@ module RedisKeyManager::Manager
           raise ArgumentError, "Invalid arguments for #{class_name}.#{key}"
         end
 
-        saturated_key = placeholders.inject(pattern) do |revised_pattern, placeholder|
+        placeholders.inject(pattern) do |revised_pattern, placeholder|
           value = options[placeholder]
           if value.nil?
             raise RedisKeyManager::InvalidKeyComponentError, "Invalid Redis key component passed to #{class_name}.#{key}"
