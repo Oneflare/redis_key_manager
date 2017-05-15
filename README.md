@@ -1,5 +1,9 @@
 # RedisKeyManager
 
+[![Gem Version][GV img]][Gem Version]
+[![Coverage Status][CS img]][Coverage Status]
+[![Build Status][BS img]][Build Status]
+
 RedisKeyManager provides a simple Ruby DSL for declaring the Redis key patterns used by your
 application. Instead of repeating the same string literals and manual interpolations throughout your
 application&mdash;with the corresponding risk of error and silent failure&mdash;RedisKeyManager
@@ -74,3 +78,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Onefla
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+[Gem Version]: https://rubygems.org/gems/redis_key_manager
+[Coverage Status]: https://coveralls.io/r/Oneflare/redis_key_manager
+[Build Status]: https://circleci.com/gh/Oneflare/redis_key_manager
+
+[GV img]: https://img.shields.io/gem/v/redis_key_manager.svg
+[CS img]: https://img.shields.io/coveralls/matt-harvey/tabulo.svg
+[BS img]: https://img.shields.io/circleci/project/github/Oneflare/redis_key_manager.svg
